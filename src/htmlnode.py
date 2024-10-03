@@ -1,9 +1,9 @@
 class HTMLNode:
     def __init__(self, tag=None, value=None, children=None, props=None):
-        self.__tag = tag
-        self.__value = value
-        self.__children = children
-        self.__props = props
+        self.tag = tag
+        self.value = value
+        self.children = children
+        self.props = props
 
     def to_html(self):
         raise NotImplementedError()
@@ -14,4 +14,4 @@ class HTMLNode:
         return ' ' + " ".join([f'{key}="{value}"' for key, value in self.props.items()])
     
     def __repr__(self):
-        return f"HTMLNode({self.__tag}, {self.__value}, {self.__children}, {self.__props})"
+        return f"HTMLNode({self.tag}, {self.value}, {self.children}, {self.props})"
